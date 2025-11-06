@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Fire Tournament</title>
+  <meta name="theme-color" content="#ff5722">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="assets/favicon.png" />
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">🔥</div>
+        <h1 class="site-title">Free Fire Tournament</h1>
+      </div>
+      <button id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav class="main-nav" role="navigation">
+        <button id="home-btn" class="nav-btn">Home</button>
+        <button id="register-btn" class="nav-btn">Register</button>
+        <button id="leaderboard-btn" class="nav-btn">Leaderboard</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Home Section -->
+    <section id="home" class="section active">
+      <h2>Upcoming Tournaments</h2>
+      <div class="tournaments" id="tournament-list"></div>
+    </section>
+
+  <!-- Registration Section -->
+  <section id="register" class="section">
+    <h2>Register Your Squad</h2>
+    <form id="register-form">
+      <input type="text" id="team-name" placeholder="Enter Team Name" required />
+      <input type="text" id="leader-name" placeholder="Team Leader Name" required />
+      <input type="number" id="members" placeholder="Number of Players" required min="1" max="4" />
+      <button type="submit">Register Now</button>
+    </form>
+    <p id="register-message"></p>
+  </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="section">
+      <h2>Live Leaderboard</h2>
+      <table id="leaderboard-table">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>Team Name</th>
+          <th>Kills</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody id="leaderboard-body">
+        <!-- Dynamic leaderboard -->
+      </tbody>
+    </table>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p>© 2025 Free Fire Tournament | Made with ❤️ by Harsh</p>
+      <div>
+        <button id="pay-btn" class="pay-button">Pay Entry Fee ₹50</button>
+      </div>
+    </div>
+  </footer>
+  <div class="contact-footer container">
+    <p>Customer care: <a id="customer-care-footer" href="tel:9453219874">9453219874</a></p>
+  </div>
+
+  <!-- Payment modal (hidden by default). Place your QR image at assets/qr.jpg -->
+  <div id="pay-modal" class="modal hidden" aria-hidden="true">
+    <div class="modal-content">
+      <button id="close-pay" class="close" aria-label="Close">&times;</button>
+      <h3>Pay Entry Fee ₹50</h3>
+      <p>Scan the QR code below with your banking/UPI app, or download it.</p>
+  <p class="upi-id">UPI: <strong id="upi-text">9454881411@fam</strong></p>
+      <img id="qr-image" src="assets/qr.jpg" alt="Payment QR" />
+      <div class="pay-actions">
+        <a id="download-qr" href="assets/qr.jpg" download="tournament-qr.jpg" class="btn">Download QR</a>
+        <button id="copy-upi" class="btn">Copy UPI ID</button>
+      </div>
+      <p class="note">Tip: Copy your QR image into <code>assets/qr.jpg</code> inside this project folder.
+      If you prefer a different filename, update the <code>src</code> of <code>#qr-image</code> in <code>index.html</code> or the path in <code>script.js</code>.</p>
+      <p class="note">Need help? Customer care: <a id="customer-care-modal" href="tel:9453219874">9453219874</a></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
